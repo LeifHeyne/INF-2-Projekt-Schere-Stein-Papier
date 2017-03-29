@@ -13,22 +13,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="menu" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-fx:controller="Controller"
->
+<BorderPane fx:id="menu" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.92" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <top>
       <MenuBar prefHeight="20.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <menus>
-            <Menu text="File">
-               <MenuItem text="New Game" onAction="#onNewGame" />
+            <Menu text="Game">
+               <MenuItem onAction="#onNewGame" text="New Game" />
                
-               <MenuItem text="Close" onAction="#onClose" />
+               <MenuItem onAction="#onClose" text="Close" />
                
             </Menu>
             <Menu text="Help">
                
-                  <MenuItem text="Instructions" onAction="#onInstructions"/>
-                  <MenuItem text="About" onAction="#onAbout"/>
+                  <MenuItem onAction="#onInstructions" text="Instructions" />
+                  <MenuItem onAction="#onAbout" text="About" />
                
             </Menu>
          </menus>
@@ -39,7 +37,7 @@ fx:controller="Controller"
          <children>
             <HBox alignment="CENTER" prefHeight="54.0" prefWidth="600.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" text="One Player Mode" textAlignment="CENTER">
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="One Player Mode" textAlignment="CENTER" textFill="#828282">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -47,7 +45,7 @@ fx:controller="Controller"
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label text="Two Player Mode">
+                  <Label text="Two Player Mode" textFill="#828282">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -64,12 +62,12 @@ fx:controller="Controller"
                         <Insets right="20.0" />
                      </HBox.margin>
                   </TextField>
-                  <TextField fx:id="twoPLayerText1" prefHeight="25.0" prefWidth="95.0" promptText="Name...">
+                  <TextField fx:id="twoPlayerText1" prefHeight="25.0" prefWidth="95.0" promptText="Name...">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
                   </TextField>
-                  <TextField fx:id="twoPLayerText2" prefHeight="25.0" prefWidth="95.0" promptText="Name...">
+                  <TextField fx:id="twoPlayerText2" prefHeight="25.0" prefWidth="95.0" promptText="Name...">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
