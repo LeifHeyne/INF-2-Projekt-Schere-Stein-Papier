@@ -13,13 +13,7 @@ import javafx.scene.transform.Rotate;
 
 public class Model {
 	private static final double MODEL_SCALE_FACTOR = 20;
-	private static final double MODEL_ONE_X_OFFSET = 0; // standard
-	private static final double MODEL_TWO_X_OFFSET = 0; // standard
-	private static final double MODEL_ONE_Y_OFFSET = 0; // standard
-	private static final double MODEL_TWO_Y_OFFSET = 0; // standard
 	private static final double modelZ = 30; // standard
-	
-	private static final int VIEWPORT_SIZE = 800;
 	
 	private static final Color lightColor = Color.rgb(244, 255, 250);
 	private static final Color jewelColor = Color.WHITE;
@@ -34,9 +28,6 @@ public class Model {
 	 private Group root;
 	 private PointLight pointLightPlayerOne;
 	 private PointLight pointLightPlayerTwo;
-	 
-	 private String modelPlayerOne;
-	 private String modelPlayerTwo;
 	 
 	 public Model() {	
 		

@@ -1,5 +1,4 @@
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.animation.KeyFrame;
@@ -10,17 +9,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
 
 
@@ -49,11 +44,9 @@ public class Controller implements Initializable{
 	
 	private GameSolo gameSolo;
 	
-	private HBox n;
 	
 	private Main main;
 	
-	private Button b;
 	
 	Node save;
 	
@@ -67,16 +60,15 @@ public class Controller implements Initializable{
 	
 	
 
-	 
+	 // Construcktor
 	
 	public Controller(Main m) {
 		model = new Model();
 		this.main = m;
-		this.b = new Button();
 	}
 	
 	
-	
+	//Menü mit funktionen versehen
 	
 	@FXML
 	private void onNewGame(){
@@ -114,9 +106,14 @@ public class Controller implements Initializable{
 		
 	}
 
+	
+	// Nötig das die Verbindungen geschaffen werden
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
+		
+		//Button OnePlayer-Mode
 		
 		startOne.setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -125,12 +122,13 @@ public class Controller implements Initializable{
 				
 				if(!onePlayerText.getText().isEmpty()){
 				
-					
-					inGame = true;
-					
-					save = menu.getCenter();
-					gameSolo = new GameSolo(new Player(onePlayerText.getText()));
-					menu.setCenter(gameSolo.getNode());
+					//Setup
+							inGame = true;
+							
+							save = menu.getCenter();
+							gameSolo = new GameSolo(new Player(onePlayerText.getText()));
+							menu.setCenter(gameSolo.getNode());
+					//SetupEnde		
 					
 					main.scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 
@@ -169,19 +167,32 @@ public class Controller implements Initializable{
 			
 		});
 		
+		
+		
+		
+		
+		
+		
+		
+		// Button TwoPlayerMode
+		
+		
+		
+		
 		startTwo.setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent event) {
 				if(!twoPlayerText1.getText().isEmpty() && !twoPlayerText2.getText().isEmpty()){
 					
-					inGame = true;
 					
-					save = menu.getCenter();
-					gameDuo = new GameDuo(new Player(twoPlayerText1.getText()), new Player(twoPlayerText2.getText()));
-					menu.setCenter(gameDuo.getNode());
-//					Node nochmal = menu.getCenter();
-					
+					//Setup
+							inGame = true;
+							
+							save = menu.getCenter();
+							gameDuo = new GameDuo(new Player(twoPlayerText1.getText()), new Player(twoPlayerText2.getText()));
+							menu.setCenter(gameDuo.getNode());
+					//Setup Ende
 					
 						
 					main.scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -240,6 +251,8 @@ public class Controller implements Initializable{
 
 
 
+	//Spielablauf vom OnePlayer-Mode
+	
 	protected void gameOne() {
 		newGameSet = false;
 		gameSolo.setTimerInt(4);
@@ -346,6 +359,14 @@ public class Controller implements Initializable{
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	//Spielablauf vom TwoPlayer-Mode
 
 	protected void gameTwo() {
 		newGameSet = false;

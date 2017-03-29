@@ -3,9 +3,7 @@ import com.sun.javafx.geom.transform.BaseTransform;
 import com.sun.javafx.jmx.MXNodeAlgorithm;
 import com.sun.javafx.jmx.MXNodeAlgorithmContext;
 import com.sun.javafx.sg.prism.NGNode;
-import com.sun.xml.internal.ws.util.InjectionPlan.FieldInjectionPlan;
 
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -13,7 +11,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
-import javafx.scene.text.TextAlignment;
 
 public class GameDuo extends Node{
 	
@@ -34,7 +31,6 @@ public class GameDuo extends Node{
 	private boolean tie;
 	private boolean playerOneWin;
 	
-	private Model model;
 	
 	
 
@@ -42,7 +38,6 @@ public class GameDuo extends Node{
 		this.playerOne = player;
 		this.playerTwo = player2;
 		
-		this.model = new Model();
 		
 		buildNode();
 		
